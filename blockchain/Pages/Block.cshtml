@@ -1,0 +1,91 @@
+﻿@page
+@model blockchain.Pages.BlockModel
+@{
+    ViewData["Title"] = "Block";
+}
+<div class="col-sm-12  blockAcceil ">
+
+
+        <p class="titreInfromation col-sm-offset-2">Block Information :</p>
+        <div class="blockdiv col-sm-offset-2 ">
+            <div class="blockInformation">
+                <div class="col-md-12">
+                    <p class="col-sm-3 col-md-3  titre"> Numero du block :</p>
+                    <p class="col-sm-6 col-md-6 value"> @Model.block.Number.Value</p>
+                </div>
+                <div class="col-md-12">
+                    <p class="col-sm-3 col-md-3 titre"> Block Hash :</p>
+                    <p class="col-sm-6 col-md-6 value"> @Model.block.BlockHash</p>
+                </div>
+                <div class="col-md-12">
+                    <p class="col-sm-3 col-md-3 titre"> Temps :</p>
+                    <p class="col-sm-6 col-md-6 value"> @Model.block.Timestamp.Value</p>
+                </div>
+                <div class="col-md-12">
+                    <p class="col-sm-3 col-md-3 titre"> Difficulté :</p>
+                    <p class="col-sm-6 col-md-6 value"> @Model.block.Difficulty.Value</p>
+                </div>
+                <div class="col-md-12">
+                    <p class="col-sm-3 col-md-3 titre"> Nonce :</p>
+                    <p class="col-sm-6 col-md-6 value"> @Model.block.Nonce</p>
+                </div>
+                <div class="col-md-12">
+                    <p class="col-sm-3 col-md-3 titre"> Donnée :</p>
+                    <p class="col-sm-6 col-md-6 value"> @Model.block.ExtraData</p>
+                </div>
+            </div>
+        </div>
+    <!--
+                    <tr>
+        <td>Miner</td>
+        <td><a href="/Search?Search=//Model.block.Miner">//Model.block.Miner</a></td>
+    </tr>
+    <tr>
+        <td>Gas Limit</td>
+        <td>//Model.block.GasLimit.Value</td>
+    </tr>
+    <tr>
+        <td>Gas Used</td>
+        <td>//Model.block.GasUsed.Value</td>
+    </tr>
+    <tr>
+        <td>Data</td>
+        <td>//Model.block.ExtraData</td>
+    </tr>
+    -->
+
+
+
+
+
+    <p class="titreInfromation col-sm-offset-2">Transactions dans ce block :</p>
+
+        <div  class="col-sm-8 blockResult col-sm-offset-2">
+            <table class="table table-striped col-sm-12 " id="blockTable">
+                <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th class="hidden-sm">Block</th>
+                        <th>Expediteur</th>
+                        <th>Destinateur</th>
+                        <th>Valeur</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var transaction in Model.block.Transactions)
+                    {
+                        <tr>
+                            <td><span><a href="/Search?Search=@transaction.TransactionHash">@transaction.TransactionHash</a></span></td>
+                            <td class="hidden-sm"><a href="/Search?Search=@transaction.BlockNumber.Value">@transaction.BlockNumber.Value</a></td>
+                            <td><span class="address-tag"><a href="/Search?Search=@transaction.From">@transaction.From</a></span></td>
+                            <td><span style="white-space: nowrap;"><i class="fa fa-file-text-o" rel="tooltip" data-placement="bottom"></i> <span><a href="/Search?Search=@transaction.To">@transaction.To</a></span></span></td>
+                            <td>@(transaction.Value.Value / 1000000000)</td>
+                            
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+</div>

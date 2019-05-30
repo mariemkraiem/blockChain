@@ -1,0 +1,42 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="col-sm-12  blockAcceil ">
+
+
+    <form action="/Search" class="col-sm-4 col-sm-offset-4">
+        <span>
+            <input class="form-control col-sm-4 searchInput" type="text" placeholder="Search" name="Search" aria-label="Search">
+        </span>
+    </form>
+
+
+    <div class="col-sm-8 blockResult col-sm-offset-2">
+
+        <table class="table table-striped col-sm-12 " id="blockTable">
+            <thead>
+                <tr>
+                    <th scope="col">Identifiant</th>
+                    <th scope="col">Hash</th>
+                    <th scope="col">Transactions</th>
+                    <th scope="col">Date de validation</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var block in Model.BlockList)
+                {
+                <tr>
+                    <td scope="row"><a href="/Search?Search=@block.Number.Value">@block.Number.Value</a></td>
+                    <td>@block.BlockHash</td>
+                    <td><a href="/Search?Search=@block.Number.Value">@block.TransactionHashes.Count()</a></td>
+                    <td>@block.Timestamp.Value</td>
+
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

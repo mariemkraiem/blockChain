@@ -1,0 +1,164 @@
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+input-form {
+    padding: 8px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: 100%
+}
+
+.nowUser, .nowUser > a {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+    color: white !important;
+    font-size: large;
+    text-align: center;
+    margin-top:5px;
+}
+
+.block-background {
+    margin-top: 15%;
+    background-color: rgba(37, 55, 118, 0.3);
+    border-radius: 5px;
+}
+
+.backgroundPic {
+    background-image:url("/images/Image2.jpg");
+    background-size: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* Préserve le ratio de l'image */
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.btns  {
+    text-align: center !important;
+    margin-bottom: 5px !important ;
+    margin-top: 5px !important;
+}
+
+.navbar-inverse {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+.navbar-brand {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+    font-size: 20px !important;
+    color: cadetblue !important;
+}
+
+
+.navbar-inverse .navbar-nav > li > a, .btnDec {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+    font-size: 20px !important;
+    color: darkcyan !important;
+}
+
+.blockResult {
+    margin-top: 5%;
+    background-color: white !important;
+    border-radius: 5px;
+}
+
+#selectBlock {
+    width: 20%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.blockAcceil {
+    background-color: #f9f9f9;
+    position: fixed;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.divSearch {
+    margin-top: 5%;
+}
+.searchInput
+{
+    margin-top:10%;
+}
+.titre {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: right;
+    font-weight: bold;
+    font-size: 18px;
+    color: chocolate;
+}
+.value {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: left;
+    font-size: 18px;
+    word-break: break-all;
+}
+.titreInfromation {
+    color: lightcoral;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    text-decoration: underline;
+    text-align:left;
+    margin-bottom:20px;
+}
+tr {
+    text-align: center;
+    font-size: 20px;
+    vertical-align: middle !important;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+th {
+    color:brown;
+    text-align: center;
+    font-size: 17px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+td, td > a {
+    font-size: 20px;
+    vertical-align: middle !important;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black !important;
+}
